@@ -30,12 +30,22 @@ def allgui():
 
 
     root = Tk()
+    root1 = Tk()
+    root.wm_attributes('-transparentcolor', '#ab23ff')
     root.title('RFID')
     root.attributes('-fullscreen',True)
+    root1.attributes('-fullscreen',True)
 
-    bg = PhotoImage(file = "imagess.png")
+    bg = PhotoImage(file = "IMAGE.png")
+   
+    bg1 = PhotoImage(file = "IMAGE.png")
+
     label1 = Label( root, image = bg)
     label1.place(x = 0,y = 0,relwidth=1, relheight=1)
+
+    
+    # label2 = Label( root1, image = bg1)
+    # label2.place(x = 0,y = 0,relwidth=1, relheight=1)
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
     def time():
@@ -48,11 +58,11 @@ def allgui():
         NOp.config(text = Inn_Disp)
 
     TIme = Label(root, font = ('calibri', 40, 'bold'),
-                foreground = 'BLACK')
+                foreground = 'BLACK',background="#ab23ff")
     
-    NAme = Label(root, text="NAME", font = ('calibri', 40, 'bold'))
-    NOp = Label(root, text="", font = ('calibri', 20, 'bold'))
-    INn = Label(root, text="INN", font = ('calibri', 30, 'bold'))
+    NAme = Label(root, text="NAME", font = ('calibri', 40, 'bold'),foreground = 'BLACK',background="#ab23ff")
+    NOp = Label(root, text="", font = ('calibri', 20, 'bold'),foreground = 'BLACK',background="#ab23ff")
+    INn = Label(root, text="INN", font = ('calibri', 30, 'bold'),foreground = 'BLACK',background="#ab23ff")
     
    # TIme.pack()
     TIme.place(bordermode=INSIDE, x =0, y = 0)
@@ -94,7 +104,7 @@ def ifnonetwork():
 
 
 thread1 = threading.Thread(target=allgui)
-#thread1.start()
+thread1.start()
 
 #thread2 = threading.Thread(target=ifnetwork)
 #thread2.start()
